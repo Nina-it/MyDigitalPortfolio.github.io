@@ -1,0 +1,573 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <p>MyDigitalPortfolio</p>
+    <div class="w3-right-side w3-hide-small">
+     
+<a href="Home.html" class="w3-bar-item w3-button w3-right">Home</a>
+      <a href="me.html" class="w3-bar-item w3-right w3-button">About</a>
+    <div class="w3-dropdown-hover w3-right">
+  <button class="w3-button">Portfolio</button>
+       <div class="w3-dropdown-content w3-bar-block w3-card-4">
+    <a href="Materials.html" class="w3-bar-item w3-button w3-right">Materials</a>
+    <a href="notes.html" class="w3-bar-item w3-button">Notes</a>
+    <a href="CTYPE .html" class="w3-bar-item w3-button">Portfolios</a>
+      
+    </div>
+  </div>
+</div>
+    
+
+    </div>
+  </div>
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Page</title>
+    <style>
+      
+        .body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+                header {
+            background-color: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .website-name {
+            font-size: 24px;
+            font-weight: bold;
+            
+        }
+
+        nav li {
+            margin-right: 20px;
+            
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 25px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        
+        .left-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px;
+            width: 60%; 
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            cursor: pointer; 
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        
+        .text-box {
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            max-width: 100%; /* Adjust text box width */
+            height:68%;
+        }
+
+        /* Right Column Styles (Image and Text Below it) */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 35%; /* Adjust width for right side */
+            margin-left: 20px; /* Margin to separate from left column */
+        }
+
+        .right-column img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text-container {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            width: 96%;
+            text-align: justify;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7); /* Background with opacity */
+        }
+
+        .modal-content {
+            margin: 15% auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="website-name" style="margin-top:150px">Portfolio</div>
+        <nav class="website-number" style="margin-top:150px">
+           
+                <li>01</li>
+            
+        </nav>
+    </header>
+
+    <main>
+        <!-- Title above the images -->
+        <h1>Computer Science as Discipline and The 5 Major Computing Disciplines</h1>
+        <div class="text" style="margin-top:50px">
+        <h2> 5 Major Computing Disciplines</h2>
+        </div>
+        <div class="content-container">
+            <!-- Left Column: 5 Images (2 Columns) and Text Box beside the last image -->
+            <div class="left-column">
+                <!-- Image 1 -->
+                <div class="image-container">
+                    <img src="P1/6.jpg" alt="Image 1" class="modal-img">
+                </div>
+                <!-- Image 2 -->
+                <div class="image-container">
+                    <img src="P1/7.jpg" alt="Image 2" class="modal-img">
+                </div>
+                <!-- Image 3 -->
+                <div class="image-container">
+                    <img src="P1/8.jpg" alt="Image 3" class="modal-img">
+                </div>
+                <!-- Image 4 -->
+                <div class="image-container">
+                    <img src="P1/9.jpg" alt="Image 4" class="modal-img">
+                </div>
+                <!-- Image 5 -->
+                <div class="image-container" >
+                    <img src="P1/10.jpg" alt="Image 5" class="modal-img" style="margin-buttom:100%">
+                </div>
+                <!-- Text Box beside the last image -->
+                <div class="text-box"  >
+                    <p>Computer science, computer engineering, information systems, information technology, and software engineering are interrelated disciplines that focus on theoretical foundations of computation, hardware and software design, information system management, practical technology application, and software development, respectively.</p>
+                </div>
+            </div>
+
+            <!-- Right Column: Image and Text Below -->
+            <div class="right-column">
+                <img src="P1/1.jpg" alt="Image 6">
+                <div class="text-container" >
+                    <p>Computer science is a dynamic field that explores the theoretical foundations of information and computation, as well as their practical applications. It encompasses the study of algorithms and data structures, programming languages, software engineering, artificial intelligence, computer networks, database systems, computer graphics, human-computer interaction, and computer security. Computer scientists investigate the limits of computation, develop efficient algorithms, design user-friendly interfaces, and create innovative software systems. They also play a crucial role in advancing technology by developing new hardware and software solutions. </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Get all images with the class 'modal-img'
+        const images = document.querySelectorAll('.modal-img');
+        const modal = document.getElementById('myModal');
+        const modalImg = document.getElementById('img01');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        // Add click event listener to each image
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            });
+        });
+
+        // Close the modal when the close button is clicked
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+
+        // Close the modal if the user clicks anywhere outside of the modal content
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            padding: 20px;
+        } 
+         .website-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            align-text:center;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Styling for the two-column grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);  /* Creates 2 equal columns */
+            gap: 20px;  /* Space between columns */
+        }
+
+        .image-container img {
+            width: 100%;  /* Ensure images take full width within their container */
+            height: auto;  /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+   <header>
+        <div class="website-name">Portfolio</div>
+        <nav>
+           
+                <li>02</li>
+            
+        </nav>
+    </header>
+    <main>
+        <div class="section">
+            <h2>Data, Information, and Information System</h2>
+            <div class="image-container" style="width:45%;height:50%; margin-left:400px">
+                <img src="P2/3.jpg" alt="Image 1" class="center" style="margin:40px" > 
+               <img src="P2/4.jpg" alt="Image 2" class="center" style="margin:40px">
+                
+            </div>
+            <div class="text-container">
+                <p>Data vs. Information: 
+While often used interchangeably, data and information are distinct concepts. Understanding the difference is crucial in today's data-driven world.
+Data refers to raw, unprocessed facts and figures. It lacks context and meaning on its own. Examples of data include numbers, text, images, and sounds.
+Information is data that has been processed, organized, interpreted, and contextualized to convey meaning. It is derived from data and provides insights and knowledge.   
+
+</p>
+            </div>
+           <div class="image-container" style="margin-top: 20px">
+                <img src="P2/7.jpg" alt="Image 3"class="center" style="width:75%;height:80%;margin:40px">
+
+        </div>
+
+        <div class="section"> 
+            <h2>Types of Support System in IS</h2>
+            <div class="image-grid">
+                <div class="image-container">
+                    <img src="P2/9.jpg" alt="Image 4">
+                </div>
+                <div class="image-container">
+                    <img src="P2/10.jpg" alt="Image 5">
+                </div>
+                <div class="image-container">
+                    <img src="P2/11.jpg" alt="Image 6">
+                </div>
+                <div class="image-container">
+                    <img src="P2/12.jpg" alt="Image 7">
+                </div>
+                <div class="image-container" style="margin-buttom:50%">
+                    <img src="P2/13.jpg" alt="Image 8">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+         .website-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+
+</style>
+<body>
+        <header>
+        <div class="website-name">Portfolio</div>
+        <nav>
+           
+                <li>03</li>
+            
+        </nav>
+    </header>
+    <main>
+        <h1>NUMBER SYSTEM</h1>
+
+         <div class="text-container" style="margin-bottom:50px">
+            <p>Number System is a system representing numbers. It is also called the system of numeration and it defines a set of values to represent a quantity. These numbers are used as digits and the most common ones are 0 and 1, that are used to represent binary numbers. Digits from 0 to 9 are used to represent other types of number systems. 
+It is the mathematical notation for representing numbers of a given set by using digits or other symbols in a consistent manner. It also allows us to operate arithmetic operations like addition, subtraction, multiplication and division.
+</p>
+        </div> 
+<h2>Types of Number System</h2>
+
+        <div class="image-grid">
+            <div class="image-container">
+                <img src="P3/5.jpg" alt="Image 1">
+            </div>
+            <div class="image-container">
+                <img src="P3/7.jpg" alt="Image 2">
+            </div>
+            <div class="image-container">
+                <img src="P3/9.jpg" alt="Image 3">
+            </div>
+            <div class="image-container">
+                <img src="P3/11.jpg" alt="Image 4">
+            </div>
+        </div>
+
+       
+    </main>
+</body>
+</html>
+
+<html>
+<head>
+  <title>Download Learning Materials</title>
+  <style>
+      body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color:white;
+    }
+
+    header {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+    .website-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .portfolio-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .portfolio-list li {
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .portfolio-list li:last-child {
+      border-bottom: none;
+    }
+
+    .portfolio-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .portfolio-item img {
+      width: 50px;
+      height: 50px;
+    }/* Style buttons */
+   .btn {
+      background-color: DodgerBlue;
+      border: none;
+      color: black;
+      padding: 12px 30px;
+      cursor: pointer;
+      font-size: 20px;
+   }
+
+   /* Darker background on mouse-over */
+   .btn:hover {
+     background-color: RoyalBlue;
+   }
+  </style>
+</head>
+<body>
+
+</style>
+</head>
+<body>
+<header>
+        <div class="website-name">Portfolio</div>
+        <nav>
+           
+                <li>04, 05, 06</li>
+            
+        </nav>
+    </header>
+
+  <div class="container">
+
+    <ul class="portfolio-list">
+      <li>
+         <div class="portfolio-item">
+          <p>PORTFOLIO #4</p>
+          <a href="P/Portfolio4.pdf" download="Portfolio4">
+    <button type="button">Click Here</button>
+</a> 
+        </div>
+      </li>
+         <li>
+        <div class="portfolio-item">
+          <p>PORTFOLIO #5</p>
+          <a href="P/Portfolio5.pdf" download="Portfolio5">
+    <button type="button">Click Here</button>
+</a> 
+        </div>
+      </li>
+          <li>
+        <div class="portfolio-item">
+          <p>PORTFOLIO #6</p>
+          <a href="P/Portfolio6.pdf" download="Portfolio6">
+    <button type="button">Click Here</button>
+</a> 
+        </div>
+      </li>
+      </ul>
+  </div>
+</body>
+</html>

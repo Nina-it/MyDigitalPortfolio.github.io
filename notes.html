@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <p>MyDigitalPortfolio</p>
+    <div class="w3-right-side w3-hide-small">
+     
+<a href="Home.html" class="w3-bar-item w3-button w3-right">Home</a>
+      <a href="me.html" class="w3-bar-item w3-right w3-button">About</a>
+    <div class="w3-dropdown-hover w3-right">
+  <button class="w3-button">Portfolio</button>
+       <div class="w3-dropdown-content w3-bar-block w3-card-4">
+    <a href="Materials.html" class="w3-bar-item w3-button w3-right">Materials</a>
+    <a href="notes.html" class="w3-bar-item w3-button">Notes</a>
+    <a href="CTYPE .html" class="w3-bar-item w3-button">Portfolios</a>
+      
+    </div>
+  </div>
+</div>
+    
+
+    </div>
+  </div>
+</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyDigitalPortfolio - Notes</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+     body {
+            font-family: "Times New Roman", Georgia, Serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+
+      .main-container {
+            display: flex;
+            margin-top: 80px;
+        }
+
+        .saving-container {
+            width: 30%;
+            margin-top: 1px;
+            margin:3px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            margin-top: 70px;
+        }
+
+        .saving-title {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .saved-notes {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .saved-note {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            cursor: pointer; 
+        }
+
+        .delete-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .delete-button:hover {
+            background-color: #c0392b;
+        }
+
+        .note-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left */
+        width: 70%;
+        margin: 3px ;
+        padding: 70px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-top: 70px;
+        }
+        .note-title {
+            margin-bottom: 20px;
+            margin-top: 0px;
+        }
+
+        .note-title input {
+            width: 100%;
+            padding: 20px; 
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .note-textarea {
+            width: 100%;
+            height: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            resize: 50px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .save-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+  </style>
+</head>
+<body>
+
+  <div class="main-container">
+    <div class="saving-container">
+      <h3 class="saving-title">My Notes</h3>
+      <ul class="saved-notes" id="saved-notes-list"></ul>
+    </div>
+
+    <div class="note-container">
+      <h2 class="note-title">Notes Here!</h2>
+      
+      <input type="text" id="note-title" placeholder="Enter your note title" style="max-width:200px;margin:5px">
+      
+      <textarea id="note-textarea" placeholder="Write your notes here..."style="width:700px;height:500px;margin:5px" ></textarea>
+      <div class="buttons">
+        <button class="save-button" onclick="saveNote()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const savedNotesList = document.getElementById('saved-notes-list');
+
+    function saveNote() {
+      const title = document.getElementById('note-title').value;
+      const content = document.getElementById('note-textarea').value;
+
+      if (title || content) {
+        const noteId = Date.now();
+        const note = { id: noteId, title, content };
+        const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+        savedNotes.push(note);
+        localStorage.setItem('notes', JSON.stringify(savedNotes));
+
+        displaySavedNotes();
+        clearInputFields();
+      }
+    }
+
+    function displaySavedNotes() {
+      const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+      savedNotesList.innerHTML = '';
+
+      savedNotes.forEach(note => {
+        const li = document.createElement('li');
+        li.classList.add('saved-note');
+        li.innerHTML = `${note.title} <button class="delete-button" onclick="deleteNote(${note.id})">Delete</button>`;
+
+        li.onclick = () => {
+          document.getElementById('note-title').value = note.title;
+          document.getElementById('note-textarea').value = note.content;
+        };
+
+        savedNotesList.appendChild(li);
+      });
+    }
+
+    function deleteNote(noteId) {
+      const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+      const filteredNotes = savedNotes.filter(note => note.id !== noteId);
+      localStorage.setItem('notes', JSON.stringify(filteredNotes));
+      displaySavedNotes();
+    }
+
+    window.onload = displaySavedNotes;
+  </script>
+</body>
+</html>
